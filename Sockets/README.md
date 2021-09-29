@@ -94,7 +94,9 @@
 
 ******************************
 
-### Ejemplo para correrlo local
+## Ejemplos para correrlo local
+
+### Send and receive
 
 * Servidor ---> servidor.c
 * Cliente ----> cliente.c
