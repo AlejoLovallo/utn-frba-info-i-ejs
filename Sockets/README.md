@@ -24,14 +24,13 @@
 
 * Struct sockaddr_in
 
-    * ```   struct sockaddr_in {
+    ```   struct sockaddr_in {
 	            __uint8_t       sin_len;
 	            sa_family_t     sin_family;
 	            in_port_t       sin_port;
 	            struct  in_addr sin_addr;
 	            char            sin_zero[8];
-        };
-    ```
+        };```
 
 #### Htons
 
@@ -61,7 +60,50 @@
 
 * Es una funcion **bloqueante**.
 
-***********
+*************
 
 ## Cliente TCP/IP
 
+* Paso a paso
+    * socket
+    * connect
+
+### Connect
+
+* ```int connect(int sockfd, const struct sockaddr *addr,socklen_t addrlen);```
+* sockfd: socket creado anteriormente
+* sockaddr: Es un **puntero a una estructura** del mismo tipo que el **servidor**.
+* addrlen: Tamaño de la estructura pasada en sockaddr.
+
+**************
+
+## Funciones de comunicacion
+
+### Send / Rcv
+
+* ```ssize_t send(int sockfd, const void *buf, size_t len, int flags);```
+    * sockfd: socket correspondiente (depnde de que lado se envie)
+    * buf: Buffer 
+    * len: Tamaño del buffer
+    * flags: 
+
+* ```ssize_t recv(int sockfd, void *buf, size_t len, int flags);```
+
+* Devuelve ssize_t en int.
+
+
+******************************
+
+### Ejemplo para correrlo local
+
+* Servidor ---> servidor.c
+* Cliente ----> cliente.c
+
+* Compilacion
+    ```
+        gcc -o srv servidor.c && gcc -o client cliente.c 
+    ```
+
+* Correr ambos archivos
+    * Primero el servidor: ./srv
+    * Segundo el cliente: ./client 127.0.0.1

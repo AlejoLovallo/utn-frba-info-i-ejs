@@ -1,5 +1,8 @@
 /* archivos de cabecera */
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <unistd.h>   
 #include <sys/types.h>
 #include <sys/socket.h>
 #include <netinet/in.h>
@@ -33,8 +36,9 @@ int main(int argc, char *argv[])
    }
 
    /* llamada a gethostbyname() */
-   if ((he=gethostbyname(argv[1]))==NULL){          printf("gethostbyname() error\n");
-      exit(-1);
+   if ((he=gethostbyname(argv[1]))==NULL){          
+       printf("gethostbyname() error\n");
+       exit(-1);
    }
 
    /* llamada a socket() */
