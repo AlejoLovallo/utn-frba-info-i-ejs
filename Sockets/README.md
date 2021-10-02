@@ -109,3 +109,13 @@
 * Correr ambos archivos
     * Primero el servidor: ./srv
     * Segundo el cliente: ./client 127.0.0.1
+
+
+******************* 
+
+* ssize_t send(int sockfd, const void *buf, size_t len, int flags);
+* ssize_t recv(int sockfd, void *buf, size_t len, int flags);
+
+
+* write
+* read

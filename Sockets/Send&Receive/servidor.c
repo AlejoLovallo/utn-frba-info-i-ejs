@@ -14,7 +14,10 @@
 int main()
 {
 
-   int fd, fd2; /* file descriptors */
+   int fd, fd2; /* file descriptors 
+   fd: representa al server
+   fd2: representa al cliente
+   */
 
    struct sockaddr_in server; 
    /* para la informacion de la direccion del servidor */
@@ -26,7 +29,7 @@ int main()
 
    /* llamada a socket() */
    //AF_INET para especificar protocolo, hay otro para IPV6 por ejemplo
-   if ((fd=socket(AF_INET, SOCK_STREAM, 0)) == -1 ) 
+   if ((    fd=socket(AF_INET, SOCK_STREAM, 0     )) == -1 ) 
    {  
       printf("error en socket()\n");
       exit(-1);
@@ -45,7 +48,7 @@ int main()
    /* escribimos ceros en el resto de la estructura */
    
    /* llamada a bind() */
-   if(bind(fd,(struct sockaddr*)&server,sizeof(struct sockaddr))==-1) 
+   if(   bind(fd,(struct sockaddr*)&server,sizeof(struct sockaddr)  )==-1) 
    {
       printf("error en bind() \n");
       exit(-1);
@@ -53,7 +56,7 @@ int main()
 
    /* llamada a listen() */
    //BACKLOG especifica el nro maximo de conexiones en cola a ser atendidas
-   if(listen(fd,BACKLOG) == -1) 
+   if( listen(fd,BACKLOG) == -1) 
    {  
       printf("error en listen()\n");
       exit(-1);
@@ -62,6 +65,10 @@ int main()
    while(1) {
       sin_size=sizeof(struct sockaddr_in);
       /* llamada a accept() */
+      /**
+       * ATENCION, LA ESTRUCTURA ESTA VEZ ES LA DEL CLIENTE
+       * 
+       * */
       if ((fd2 = accept(fd,(struct sockaddr *)&client,&sin_size))==-1) 
       {
          printf("error en accept()\n");
@@ -71,6 +78,7 @@ int main()
       printf("Se obtuvo una conexion desde %s\n",inet_ntoa(client.sin_addr) ); 
       /* muestra la IP del cliente */
 
+      //ssize_t send(int sockfd, const void *buf, size_t len, int flags);
       send(fd2,"Bienvenido al servidor.\n",22,0); 
       /* muestra el mensaje de bienvenida al cliente */
 
