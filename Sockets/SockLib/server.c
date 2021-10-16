@@ -9,7 +9,7 @@ int main ()
 
 	if ((sockfd = Open_conection (&my_addr)) == -1)
 	{
-		perror ("FallÃ³ la creaciÃ³n de la conexiÃ³n"); 
+		perror ("Fala la creacion de la conexion"); 
 		exit (1);
 	}
 
