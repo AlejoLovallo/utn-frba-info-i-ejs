@@ -4,3 +4,9 @@
 
 * Ejercicios varios 
 
+* Autores: 
+    * Docente: Ignacio Bonelli
+    * Auxiliares:
+        * Pedro Vassena
+        * Alejo Lovallo
+
