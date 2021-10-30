@@ -5,6 +5,8 @@
     * El servidor le devuelve el nonmbre del archivo a leer
 
     * El cliente se encarga del resto del ejercicio.
+
+
     * Cantidad total de palabras
     * Cantidad de veces que aparece la palabra “diodo”
 
