@@ -21,3 +21,6 @@ empanadas de cada uno. Tenga en cuenta que esta información NO FORMARÁ PARTE d
     * FIFO para la comunicación inicial del cliente.
     * Sockets para las consultas del cliente
     * CLASE PRACTICA ALEJO-HECTOR ES CON SHARED MEMORY. (Cuando el cliente hace un pedido primero tiene que decir su numero de cliente) 
+    * Consultas del cliente
+        * Opcion 1: Sockets
+        * Opcion 2: Shared memory
